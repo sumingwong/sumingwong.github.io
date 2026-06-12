@@ -1,0 +1,122 @@
+# ============================================================
+# 苏楚的个人博客 — Hugo 站点配置
+# 主题：PaperMod
+# ============================================================
+
+baseURL = "https://sumingwong.github.io/"
+title = "苏楚"
+copyright = "© 2026 苏楚"
+theme = "PaperMod"
+
+enableInlineShortcodes = true
+enableRobotsTXT = true
+enableEmoji = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+pygmentsUseClasses = true
+
+# 首页主体内容区域使用 posts section
+mainsections = ["posts"]
+
+# 分页：首页每页显示 8 篇文章
+[pagination]
+  pagerSize = 8
+
+# 压缩配置
+[minify]
+  disableXML = true
+
+# ============================================================
+# 语言配置（中文）
+# ============================================================
+[languages]
+  [languages.zh]
+    label = "简体中文"
+    weight = 1
+
+    [languages.zh.taxonomies]
+      category = "categories"
+      tag = "tags"
+
+    # 主导航菜单
+    [[languages.zh.menu.main]]
+      name = "日常"
+      url = "/categories/daily/"
+      weight = 1
+    [[languages.zh.menu.main]]
+      name = "思考"
+      url = "/categories/thinking/"
+      weight = 2
+    [[languages.zh.menu.main]]
+      name = "工作"
+      url = "/categories/work/"
+      weight = 3
+    [[languages.zh.menu.main]]
+      name = "关于"
+      url = "/about/"
+      weight = 4
+    [[languages.zh.menu.main]]
+      name = "标签"
+      url = "/tags/"
+      weight = 5
+    [[languages.zh.menu.main]]
+      name = "搜索"
+      url = "/search/"
+      weight = 6
+
+# ============================================================
+# 输出格式
+# ============================================================
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# ============================================================
+# 主题参数
+# ============================================================
+[params]
+  env = "production"
+  description = "苏楚的个人博客 — 心理学、游戏、阅读与思考。"
+  author = "苏楚"
+
+  # 默认亮色，但保留切换选项（亮色 / 暗色 / 跟随系统）
+  defaultTheme = "light"
+  # disableThemeToggle = true  ← 不开启，保留完整切换
+
+  ShowShareButtons = false
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = false
+  ShowAllPagesInArchive = true
+  ShowPageNums = true
+  ShowToc = true
+
+  # 首页信息区（显示在文章列表上方）
+  [params.homeInfoParams]
+    Title = "你好，我是苏楚 👋"
+    Content = """
+    武汉大学心理学本科生，全职备考心理学 312 统考。
+    这里记录我的考研日志、游戏与阅读的思考、以及科研学习笔记。
+    """
+
+  # 社交链接
+  [[params.socialIcons]]
+    name = "github"
+    title = "GitHub"
+    url = "https://github.com/sumingwong"
+
+  # 资源
+  [params.assets]
+    disableHLJS = true   # 使用 Chroma 高亮（Hugo 内置），不用 highlight.js
+
+# ============================================================
+# Markdown 渲染配置
+# ============================================================
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true   # 允许 HTML 混入 Markdown
+  [markup.highlight]
+    noClasses = false
