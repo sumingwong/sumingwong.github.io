@@ -1,0 +1,36 @@
+/* ============================================================
+   苏楚的个人博客 — 中文排版与视觉定制 (Blowfish)
+   ============================================================ */
+
+/* ── 全局中文字体优化 ── */
+:root {
+  --body-font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+               "Noto Sans CJK SC", system-ui, -apple-system, sans-serif;
+}
+
+/* ── 正文排版 ── */
+.prose {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+}
+
+.prose p {
+  margin-bottom: 1.2em;
+}
+
+/* ── 引用块 ── */
+.prose blockquote {
+  font-style: normal;
+}
+
+/* ── 链接下划线 ── */
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── 首页卡片微调 ── */
+.card-view .group {
+  border-radius: 12px;
+}
