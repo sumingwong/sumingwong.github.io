@@ -120,6 +120,7 @@ enableEmoji = true
     cardView = true
     cardViewScreenWidth = false
     layoutBackgroundBlur = true
+    homepageImage = "background.jpg"
 
   # 文章页
   [params.article]
